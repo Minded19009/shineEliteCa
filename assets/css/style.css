@@ -1,0 +1,376 @@
+:root {
+    --primary-font: "Epilogue", sans-serif;
+    --secondary-font: "DM Sans", sans-serif;
+    
+    --primary-color: #0e9c21;
+    --secondary-color: #1c6492;
+    --blackTwo: #0F0F0F;
+    --paraColor: #d6d6d8;
+}
+
+body {
+    background-color: #000;
+}
+
+/* Fonts */
+.font-pri{font-family: var(--primary-font) !important;}
+.font-sec{font-family: var(--secondary-font) !important;}
+
+/* Primary Color */
+.color-pri{color: var(--primary-color) !important;}
+.bg-pri{background-color: var(--primary-color) !important;}
+.border-pri{border-color: var(--primary-color) !important;}
+
+/* Secondary Color */
+.color-sec{color: var(--secondary-color) !important;}
+.bg-sec{background-color: var(--secondary-color) !important;}
+.border-sec{border-color: var(--secondary-color) !important;}
+
+/* BlackTwo Color */
+.color-blackTwo{color: var(--blackTwo) !important;}
+.bg-blackTwo{background-color: var(--blackTwo) !important;}
+.border-blackTwo{border-color: var(--blackTwo) !important;}
+
+/* para Color */
+.color-para{color: var(--paraColor) !important;}
+.bg-para{background-color: var(--paraColor) !important;}
+.border-para{border-color: var(--paraColor) !important;}
+
+.wrapper {
+    max-width: 1600px !important;
+    margin: auto !important;
+}
+
+.p-12 {
+    padding: 12px !important;
+}
+
+.px-12 {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+
+.py-12 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+.ps-12 {
+    padding-left: 12px !important;
+}
+
+.pe-12 {
+    padding-right: 12px !important;
+}
+
+.pt-12 {
+    padding-top: 12px !important;
+}
+
+.pe-12 {
+    padding-bottom: 12px !important;
+}
+
+.lh-75 {
+    line-height: 1.75 !important;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.hero-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.nav-link {
+    transition: color 0.4s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.customBtnOne .btnText {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out !important;
+}
+
+.customBtnOne:hover .btnText {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+.customBtnOne .btnIcon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.customBtnOne:hover .btnIcon {
+    transform: rotate(45deg);
+}
+
+.customBadge {
+    background-color: #ffffff1a;
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+.track {
+    gap: 40px;
+    width: max-content;
+}
+
+.track img {
+    width: 150px;
+    height: auto;
+}
+
+.hero-image {
+    right: 24px;
+    bottom: 0;
+    height: 90%;
+}
+
+.dividerSecThree {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff1a;
+    margin-bottom: 16px;
+}
+
+.secThreeBoxLink {
+    transition: color 0.4s ease-in-out;
+}
+
+.secThreeBoxLink:hover {
+    color: var(--primary-color) !important;
+}
+
+.secThreeSpecialBox {
+    background: url(https://html.awaikenthemes.com/waxking/images/service-cta-box-bg-ultimate.jpg) center / cover no-repeat;
+}
+
+.secThreeSpecialBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.secThreeServiceBox {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.secThreeServiceBox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 10px 0px #0e9c2186;
+}
+
+.pricingBadge {
+    padding: 11px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.secSevenCon {
+    background: url(../content/img/home-sec-7-bg-img.webp) center / cover no-repeat;
+    object-fit: cover;
+    object-position: center;
+}
+
+.secSevenCon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.secThreeCon {
+    background: url(../content/img/packages-sec-3-bg-img.webp) center / cover no-repeat;
+    object-fit: cover;
+    object-position: center;
+}
+
+.secThreeCon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.contactFormField {
+    padding: 17px 20px;
+    border-radius: 10px;
+    border: 1px solid #ffffff1a;
+    background: transparent;
+    font-family: var(--secondary-font);
+    color: var(--paraColor);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7em;
+    text-align: left;
+    width: 100%;
+}
+
+.contactFormField::placeholder {
+    color: var(--paraColor);
+}
+
+.contactFormField:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+
+.submit-btn {
+    padding: 14px 18px;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.footerLinks {
+    transition: color 0.4s ease-in-out;
+}
+
+.footerLinks:hover {
+    color: var(--primary-color) !important;
+}
+
+.copyrightLink {
+    transition: color 0.4s ease-in-out;
+}
+
+.copyrightLink:hover {
+    color: var(--primary-color) !important;
+}
+
+.secTwoImage {
+    object-fit: cover;
+    object-position: center;
+}
+
+.breadCrumbLink {
+    transition: color 0.4s ease-in-out;
+}
+
+.breadCrumbLink:hover {
+    color: var(--primary-color) !important;
+}
+
+.secThreeConSticky {
+    position: sticky;
+    top: 30px;
+}
+
+.dropdown-item {
+    transition: color 0.4s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-color) !important;
+    color: #000 !important;
+}
+
+.otherServiceLinks {
+    transition: color 0.4s ease-in-out, stroke 0.4s ease-in-out;
+}
+
+.otherServiceLinks:hover {
+    color: var(--primary-color) !important;
+    stroke: var(--primary-color) !important;
+}
+
+.servicePageSide {
+    position: sticky;
+    top: 30px;
+}
+
+.servicePageSideBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.servicePageSideBoxImage {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    object-position: center;
+    object-fit: cover;
+}
+
+.serviceSideBoxLinks {
+    transition: color 0.4s ease-in-out;
+}
+
+.serviceSideBoxLinks:hover {
+    color: var(--primary-color) !important;
+}
+
+@media (max-width: 991px) {
+    .servicePageSide {
+        position: relative;
+    }
+
+    .secThreeConSticky {
+        position: relative !important;
+    }
+}
+
+.stateBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.stateBoxImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
