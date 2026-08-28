@@ -486,3 +486,11 @@ body {
         height: 280px;
     }
 }
+
+.stateDot {
+    display: block;
+    height: 12px;
+    width: 12px;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+}
