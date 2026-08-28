@@ -129,47 +129,6 @@ const logoSwiper = new Swiper('.logoSwiper', {
     }
 });
 
-// Pricing Section Configuration:
-document.addEventListener('DOMContentLoaded', () => {
-    const pricingBtns = document.querySelectorAll('.pricingBadge');
-
-    pricingBtns.forEach((pricingBtn) => {
-        pricingBtn.addEventListener('click', () => {
-            // Reset all buttons
-            pricingBtns.forEach((btn) => {
-                btn.classList.remove('bg-pri');
-                btn.classList.add('bg-blackTwo');
-            });
-
-            // Activate clicked button
-            pricingBtn.classList.remove('bg-blackTwo');
-            pricingBtn.classList.add('bg-pri');
-
-            const tabName = pricingBtn.textContent.trim();
-
-            // Hide all plan types first
-            document.querySelectorAll('.basicPlan, .premiumPlan, .ultimatePlan').forEach((plan) => {
-                plan.classList.add('d-none');
-            });
-
-            // Show plans based on which tab is clicked
-            if (tabName === "Platinum package") {
-                document.querySelectorAll('.basicPlan').forEach((plan) => {
-                    plan.classList.remove('d-none');
-                });
-            } else if (tabName === "Interior detailing") {
-                document.querySelectorAll('.premiumPlan').forEach((plan) => {
-                    plan.classList.remove('d-none');
-                });
-            } else if (tabName === "Delivery & pickup") {
-                document.querySelectorAll('.ultimatePlan').forEach((plan) => {
-                    plan.classList.remove('d-none');
-                });
-            }
-        });
-    });
-});
-
 // Before/After Image Comparison Sliders (auto-inits all instances)
 document.querySelectorAll('.ba-slider').forEach((slider) => {
     const afterImg = slider.querySelector('.ba-slider-after');
@@ -215,3 +174,124 @@ document.querySelectorAll('.ba-slider').forEach((slider) => {
     window.addEventListener('touchmove', moveHandler, { passive: true });
     window.addEventListener('touchend', endDrag);
 });
+
+// Pricing Tabs Configuration:
+let servicesSwitcher = document.querySelectorAll('.pricingBadge');
+let planSwitcherCon = document.querySelector('.planSwitcherCon');
+let planSwitcher = document.querySelectorAll('.planSwitcher');
+let pricingPlan = document.querySelectorAll('.pricingPlan');
+
+function showPlan(planClass) {
+    pricingPlan.forEach((plan) => {
+        plan.classList.add('d-none');
+    });
+
+    let selectedPlan = document.querySelectorAll(`.${planClass}`);
+
+    selectedPlan.forEach((plan) => {
+        plan.classList.remove('d-none');
+    })
+}
+
+servicesSwitcher.forEach((switcher) => {
+    switcher.addEventListener('click', () => {
+
+        servicesSwitcher.forEach((switcher) => {
+            switcher.classList.remove('bg-pri');
+            switcher.classList.add('bg-blackTwo');
+        });
+
+        switcher.classList.remove('bg-blackTwo');
+        switcher.classList.add('bg-pri');
+
+        let label = switcher.innerText.trim().toLowerCase();
+
+        if (label === 'interior detailing' || label === 'exterior detailing') {
+
+            planSwitcherCon.classList.add('d-flex');
+            planSwitcherCon.classList.remove('d-none');
+
+            let selectedPlan = document.querySelector('.planSwitcher.bg-pri');
+            let packageLabel = selectedPlan.innerText.trim().toLowerCase();
+
+            if (label === 'interior detailing') {
+                if (packageLabel === 'basic package') {
+                    showPlan('interiorBasic');
+                } else {
+                    showPlan('interiorPlatinum');
+                }
+            }
+
+            if (label === 'exterior detailing') {
+                if (packageLabel === 'basic package') {
+                    showPlan('exteriorBasic');
+                } else {
+                    showPlan('exteriorPlatinum');
+                }
+            }
+
+        }
+
+        else if (label === 'complete detailing') {
+
+            planSwitcherCon.classList.add('d-none');
+            planSwitcherCon.classList.remove('d-flex');
+
+            showPlan('completeDetailing');
+        }
+
+        else if (label === 'add-ons') {
+
+            planSwitcherCon.classList.add('d-none');
+            planSwitcherCon.classList.remove('d-flex');
+
+            showPlan('addOns');
+        }
+    });
+});
+
+
+planSwitcher.forEach((switcher) => {
+    switcher.addEventListener('click', () => {
+
+        planSwitcher.forEach((switcher) => {
+            switcher.classList.remove('bg-pri');
+            switcher.classList.add('bg-blackTwo');
+        });
+
+        switcher.classList.remove('bg-blackTwo');
+        switcher.classList.add('bg-pri');
+
+        let selectedService = document.querySelector('.pricingBadge.bg-pri');
+        let serviceLabel = selectedService.innerText.trim().toLowerCase();
+
+        let packageLabel = switcher.innerText.trim().toLowerCase();
+
+        if (serviceLabel === 'interior detailing' &&
+            packageLabel === 'basic package') {
+
+            showPlan('interiorBasic');
+        }
+
+        else if (serviceLabel === 'interior detailing' &&
+            packageLabel === 'platinum package') {
+
+            showPlan('interiorPlatinum');
+        }
+
+        else if (serviceLabel === 'exterior detailing' &&
+            packageLabel === 'basic package') {
+
+            showPlan('exteriorBasic');
+        }
+
+        else if (serviceLabel === 'exterior detailing' &&
+            packageLabel === 'platinum package') {
+
+            showPlan('exteriorPlatinum');
+        }
+    });
+});
+
+
+showPlan('interiorBasic');
