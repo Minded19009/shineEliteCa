@@ -168,4 +168,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-})
+});
+
+// Before/After Image Comparison Sliders (auto-inits all instances)
+document.querySelectorAll('.ba-slider').forEach((slider) => {
+    const afterImg = slider.querySelector('.ba-slider-after');
+    const handle = slider.querySelector('.ba-slider-handle');
+    let isDragging = false;
+
+    function setSliderPosition(percent) {
+        percent = Math.max(0, Math.min(100, percent));
+        afterImg.style.clipPath = `inset(0 0 0 ${percent}%)`;
+        handle.style.left = `${percent}%`;
+    }
+
+    function getPercentFromEvent(e) {
+        const rect = slider.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const x = clientX - rect.left;
+        return (x / rect.width) * 100;
+    }
+
+    function startDrag(e) {
+        isDragging = true;
+        moveHandler(e);
+    }
+
+    function moveHandler(e) {
+        if (!isDragging) return;
+        setSliderPosition(getPercentFromEvent(e));
+    }
+
+    function endDrag() {
+        isDragging = false;
+    }
+
+    // Mouse events
+    handle.addEventListener('mousedown', startDrag);
+    slider.addEventListener('mousedown', startDrag);
+    window.addEventListener('mousemove', moveHandler);
+    window.addEventListener('mouseup', endDrag);
+
+    // Touch events
+    handle.addEventListener('touchstart', startDrag, { passive: true });
+    slider.addEventListener('touchstart', startDrag, { passive: true });
+    window.addEventListener('touchmove', moveHandler, { passive: true });
+    window.addEventListener('touchend', endDrag);
+});
