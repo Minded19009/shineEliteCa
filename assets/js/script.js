@@ -295,3 +295,20 @@ planSwitcher.forEach((switcher) => {
 
 
 showPlan('interiorBasic');
+
+// Services Swiper:
+const servicesSwiper = new Swiper('.servicesSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    speed: 2000,
+    loop: true,
+    autoplay: {
+        delay: 3000,
+    },
+    
+    breakpoints: {
+        650: {
+            slidesPerView: 2,
+        }
+     }
+});
