@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Reset all question texts
             document.querySelectorAll('.faq-question p').forEach(qText => {
                 qText.classList.remove('color-pri');
-                qText.classList.add('text-white');
+                qText.classList.add('text-black');
             });
             
             // Reset all icons
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.style.transform = 'rotate(180deg)';
                 
                 // Change question text color
-                questionText.classList.remove('text-white');
+                questionText.classList.remove('text-black');
                 questionText.classList.add('color-pri');
             }
         });
@@ -198,10 +198,10 @@ servicesSwitcher.forEach((switcher) => {
 
         servicesSwitcher.forEach((switcher) => {
             switcher.classList.remove('bg-pri');
-            switcher.classList.add('bg-blackTwo');
+            switcher.classList.add('bg-black');
         });
 
-        switcher.classList.remove('bg-blackTwo');
+        switcher.classList.remove('bg-black');
         switcher.classList.add('bg-pri');
 
         let label = switcher.innerText.trim().toLowerCase();
@@ -256,7 +256,7 @@ planSwitcher.forEach((switcher) => {
 
         planSwitcher.forEach((switcher) => {
             switcher.classList.remove('bg-pri');
-            switcher.classList.add('bg-blackTwo');
+            switcher.classList.add('bg-black');
         });
 
         switcher.classList.remove('bg-blackTwo');

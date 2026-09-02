@@ -4,12 +4,12 @@
     
     --primary-color: #0e9c21;
     --secondary-color: #1c6492;
-    --blackTwo: #0F0F0F;
-    --paraColor: #d6d6d8;
+    --blackTwo: #c7c7c7;
+    --paraColor: #323232;
 }
 
 body {
-    background-color: #000;
+    /* background-color: #000; */
 }
 
 /* Fonts */
@@ -30,6 +30,8 @@ body {
 .color-blackTwo{color: var(--blackTwo) !important;}
 .bg-blackTwo{background-color: var(--blackTwo) !important;}
 .border-blackTwo{border-color: var(--blackTwo) !important;}
+
+.bg-blackThree{background-color: #0F0F0F !important;}
 
 /* para Color */
 .color-para{color: var(--paraColor) !important;}
@@ -239,7 +241,7 @@ body {
 }
 
 .contactFormField::placeholder {
-    color: var(--paraColor);
+    color: #ffffff80;
 }
 
 .contactFormField:focus {
