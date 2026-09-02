@@ -314,11 +314,14 @@ const servicesSwiper = new Swiper('.servicesSwiper', {
 });
 
 const navbar = document.getElementById('navbar');
+const navbarSpacer = document.querySelector('.navbar-spacer');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 110) {
-        navbar.classList.add('navbar-fixed')
+        navbar.classList.add('navbar-fixed');
+        navbarSpacer.style.display = 'block';
     } else {
         navbar.classList.remove('navbar-fixed');
+        navbarSpacer.style.display = 'none';
     }
 });
