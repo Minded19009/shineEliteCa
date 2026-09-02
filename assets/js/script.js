@@ -255,12 +255,12 @@ planSwitcher.forEach((switcher) => {
     switcher.addEventListener('click', () => {
 
         planSwitcher.forEach((switcher) => {
-            switcher.classList.remove('bg-pri');
+            switcher.classList.remove('bg-sec');
             switcher.classList.add('bg-black');
         });
 
         switcher.classList.remove('bg-blackTwo');
-        switcher.classList.add('bg-pri');
+        switcher.classList.add('bg-sec');
 
         let selectedService = document.querySelector('.pricingBadge.bg-pri');
         let serviceLabel = selectedService.innerText.trim().toLowerCase();

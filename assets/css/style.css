@@ -124,7 +124,7 @@ body {
 }
 
 .customBadge {
-    background-color: #ffffff1a;
+    background-color: var(--secondary-color);
     padding: 8px 10px;
     font-size: 14px;
 }
@@ -272,7 +272,7 @@ body {
 }
 
 .copyrightLink:hover {
-    color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
 }
 
 .secTwoImage {
