@@ -4,12 +4,8 @@
     
     --primary-color: #0e9c21;
     --secondary-color: #1c6492;
-    --blackTwo: #c7c7c7;
+    --blackTwo: #f0f0f0;
     --paraColor: #323232;
-}
-
-body {
-    /* background-color: #000; */
 }
 
 /* Fonts */
@@ -106,15 +102,6 @@ body {
     color: var(--primary-color) !important;
 }
 
-.customBtnOne .btnText {
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out !important;
-}
-
-.customBtnOne:hover .btnText {
-    color: #000 !important;
-    background-color: #fff !important;
-}
-
 .customBtnOne .btnIcon {
     transition: transform 0.3s ease-in-out;
 }
@@ -157,7 +144,7 @@ body {
 }
 
 .secThreeBoxLink:hover {
-    color: var(--primary-color) !important;
+    color: #000 !important;
 }
 
 .secThreeSpecialBox {
@@ -232,7 +219,7 @@ body {
     border: 1px solid #ffffff1a;
     background: transparent;
     font-family: var(--secondary-font);
-    color: var(--paraColor);
+    color: #fff;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.7em;
@@ -492,7 +479,7 @@ body {
     display: block;
     height: 12px;
     width: 12px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border-radius: 100%;
 }
 
@@ -521,7 +508,7 @@ body {
 
 #navbar {
     position: relative;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
 }
 
 #navbar.navbar-fixed {
@@ -529,6 +516,9 @@ body {
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    background-color: #000;
+    background: rgba(80, 80, 80, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
     border: none !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
