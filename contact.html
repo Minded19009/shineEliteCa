@@ -9,11 +9,11 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Shine Elite">
     <meta name="language" content="English">
-    <link rel="canonical" href="https://shineelite.ca/contact.html">
+    <link rel="canonical" href="https://shineelite.ca/contact">
 
     <meta property="og:title" content="Contact Us | Shine Elite — Premium Mobile Car Detailing Across Canada">
     <meta property="og:description" content="Contact Shine Elite for premium mobile car detailing across Canada. Book your appointment online or call us at (226) 242-3112. We bring the shine to you!">
-    <meta property="og:url" content="https://shineelite.ca/contact.html">
+    <meta property="og:url" content="https://shineelite.ca/contact">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Shine Elite">
     <meta property="og:image" content="https://shineelite.ca/assets/content/img/og-image.jpg">
@@ -42,7 +42,7 @@
             "@type": "ContactPage",
             "name": "Contact Shine Elite",
             "description": "Contact Shine Elite for premium mobile car detailing across Canada. Book your appointment online or call us at (226) 242-3112.",
-            "url": "https://shineelite.ca/contact.html",
+            "url": "https://shineelite.ca/contact",
             "isPartOf": {
                 "@type": "WebSite",
                 "name": "Shine Elite",
@@ -189,6 +189,7 @@
                         <div class="col-12 col-lg-6 contactForm">
                             <div class="rounded-3 p-4 p-lg-5 bg-sec" style="backdrop-filter: blur(10px);">
                                 <h3 class="text-center text-lg-start text-uppercase font-pri fs-3 lh-base text-white fw-bold mb-4">Send Us a Message</h3>
+                                <div id="formMessage"></div>
                                 <form action="#" method="post" id="contactForm">
                                     <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-4 mb-4">
                                         <input type="text" id="fullName" name="fullName" placeholder="Your Name" required="" class="contactFormField">
@@ -336,6 +337,49 @@
         </div>
     </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                
+                fetch('contact-form-handler.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    const messageDiv = document.getElementById('formMessage');
+                    
+                    if (data.includes('success')) {
+                        messageDiv.innerHTML = `
+                            <div class="alert alert-success text-center p-3 rounded-3 mb-4" style="background-color: #0e9c21; color: #fff; border: none;">
+                                <strong>Thank You!</strong> Your message has been sent successfully. We'll get back to you shortly!
+                            </div>
+                        `;
+                        form.reset();
+                    } else {
+                        messageDiv.innerHTML = `
+                            <div class="alert alert-danger text-center p-3 rounded-3 mb-4" style="background-color: #dc3545; color: #fff; border: none;">
+                                <strong>Oops!</strong> Something went wrong. Please try again or call us directly.
+                            </div>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('formMessage').innerHTML = `
+                        <div class="alert alert-danger text-center p-3 rounded-3 mb-4" style="background-color: #dc3545; color: #fff; border: none;">
+                            <strong>Oops!</strong> Something went wrong. Please try again or call us directly.
+                        </div>
+                    `;
+                });
+            });
+        });
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
