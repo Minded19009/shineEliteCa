@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/content/
 
-Sitemap: https://shineelite.ca/sitemap.xml 
+Sitemap: https://www.shineelite.ca/sitemap.xml 
