@@ -93,7 +93,7 @@
                     <nav class="navbar navbar-expand-lg bg-transparent">
                         <a href="index.html" class="navbar-brand"><img src="assets/content/img/logo.png" alt="Shine Elite CA - Best Mobile Car Detailing Canada" width="100%" height="75px"></a>
 
-                        <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#headerMenu">
+                        <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#headerMenu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="headerMenu">
                             <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></span>
                         </button>
 
@@ -190,34 +190,43 @@
                             <div class="rounded-3 p-4 p-lg-5 bg-sec" style="backdrop-filter: blur(10px);">
                                 <h3 class="text-center text-lg-start text-uppercase font-pri fs-3 lh-base text-white fw-bold mb-4">Send Us a Message</h3>
                                 <div id="formMessage"></div>
-                                <form action="#" method="post" id="contactForm">
-                                    <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-4 mb-4">
-                                        <input type="text" id="fullName" name="fullName" placeholder="Your Name" required="" class="contactFormField">
-                                        <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required="" class="contactFormField">
-                                    </div>
-                                    <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-4 mb-4">
-                                        <input type="text" id="vehicleModel" name="vehicleModel" placeholder="Car Model Name" required="" class="contactFormField">
-                                        <input type="email" name="email" id="email" placeholder="Email Address" required="" class="contactFormField">
-                                    </div>
-                                    <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-4 mb-4">
-                                        <select name="serviceType" id="serviceType" required="" class="contactFormField">
-                                            <option class="text-black font-sec fw-medium bg-blackTwo" value="">Select a service</option>
-                                            <option class="text-black font-sec fw-medium bg-blackTwo" value="basic">Basic Package</option>
-                                            <option class="text-black font-sec fw-medium bg-blackTwo" value="premium">Premium Package</option>
-                                            <option class="text-black font-sec fw-medium bg-blackTwo" value="platinum">Platinum Package</option>
-                                            <option class="text-black font-sec fw-medium bg-blackTwo" value="interior">Interior Detailing</option>
-                                            <option class="text-black font-sec fw-medium bg-blackTwo" value="exterior">Exterior Detailing</option>
-                                            <option class="text-black font-sec fw-medium bg-blackTwo" value="ceramic">Ceramic Coating</option>
-                                        </select>
-                                        
-                                        <input type="date" name="date" id="date" required="" class="contactFormField">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center justify-content-center gap-4 mb-4">
-                                        <textarea name="message" id="message" rows="5" placeholder="Any special requests or additional details about your vehicle?" class="contactFormField"></textarea>
-                                    </div>
+                                    <form action="#" method="post" id="contactForm">
+                                        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-4 mb-4">
+                                            <label for="fullName" class="visually-hidden">Your Name</label>
+                                            <input type="text" id="fullName" name="fullName" placeholder="Your Name" required="" class="contactFormField">
 
-                                    <button type="submit" class="submit-btn w-100 bg-pri font-pri fw-semibold fs-6 text-uppercase border-0 text-white lh-1 rounded-pill">Send Message</button>
-                                </form>
+                                            <label for="phoneNumber" class="visually-hidden">Phone Number</label>
+                                            <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required="" class="contactFormField">
+                                        </div>
+                                        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-4 mb-4">
+                                            <label for="vehicleModel" class="visually-hidden">Car Model Name</label>
+                                            <input type="text" id="vehicleModel" name="vehicleModel" placeholder="Car Model Name" required="" class="contactFormField">
+
+                                            <label for="email" class="visually-hidden">Email Address</label>
+                                            <input type="email" name="email" id="email" placeholder="Email Address" required="" class="contactFormField">
+                                        </div>
+                                        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-4 mb-4">
+                                            <label for="serviceType" class="visually-hidden">Select a Service</label>
+                                            <select name="serviceType" id="serviceType" required="" class="contactFormField">
+                                                <option class="text-black font-sec fw-medium bg-blackTwo" value="">Select a service</option>
+                                                <option class="text-black font-sec fw-medium bg-blackTwo" value="basic">Basic Package</option>
+                                                <option class="text-black font-sec fw-medium bg-blackTwo" value="premium">Premium Package</option>
+                                                <option class="text-black font-sec fw-medium bg-blackTwo" value="platinum">Platinum Package</option>
+                                                <option class="text-black font-sec fw-medium bg-blackTwo" value="interior">Interior Detailing</option>
+                                                <option class="text-black font-sec fw-medium bg-blackTwo" value="exterior">Exterior Detailing</option>
+                                                <option class="text-black font-sec fw-medium bg-blackTwo" value="ceramic">Ceramic Coating</option>
+                                            </select>
+
+                                            <label for="date" class="visually-hidden">Preferred Date</label>
+                                            <input type="date" name="date" id="date" required="" class="contactFormField">
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center justify-content-center gap-4 mb-4">
+                                            <label for="message" class="visually-hidden">Your Message</label>
+                                            <textarea name="message" id="message" rows="5" placeholder="Any special requests or additional details about your vehicle?" class="contactFormField"></textarea>
+                                        </div>
+
+                                        <button type="submit" class="submit-btn w-100 bg-pri font-pri fw-semibold fs-6 text-uppercase border-0 text-white lh-1 rounded-pill">Send Message</button>
+                                    </form>
                             </div>
                         </div>
                     </div>
