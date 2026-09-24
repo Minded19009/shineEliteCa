@@ -42,24 +42,58 @@
             "@type": "Service",
             "name": "Exterior Detailing Service",
             "description": "Shine Elite offers premium exterior auto detailing across Canada. Professional hand wash, clay bar treatment, and wax application — delivering showroom-quality shine.",
+            "url": "https://shineelite.ca/exterior-detailing",
+            "image": "https://shineelite.ca/assets/content/img/og-image.jpg",
+            "serviceType": "Exterior Detailing",
+            "category": "Auto Detailing",
             "provider": {
-                "@type": "AutoDetailer",
+                "@type": "AutomotiveBusiness",
                 "name": "Shine Elite",
                 "url": "https://shineelite.ca/",
+                "logo": "https://shineelite.ca/assets/content/img/logo.png",
+                "image": "https://shineelite.ca/assets/content/img/og-image.jpg",
                 "telephone": "+12262423112",
+                "email": "shineelite404@gmail.com",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "170 Glidden Rd",
                     "addressLocality": "Brampton",
                     "addressRegion": "Ontario",
                     "addressCountry": "CA"
-                }
+                },
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "08:00",
+                        "closes": "18:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": "Saturday",
+                        "opens": "08:00",
+                        "closes": "15:00"
+                    }
+                ],
+                "sameAs": [
+                    "https://www.facebook.com/share/1EqZykxLGH/",
+                    "https://www.instagram.com/shine.elite",
+                    "https://www.tiktok.com/@shineelite404"
+                ]
             },
             "areaServed": {
                 "@type": "Country",
                 "name": "Canada"
             },
-            "serviceType": "Exterior Detailing"
+            "offers": {
+                "@type": "AggregateOffer",
+                "priceCurrency": "CAD",
+                "lowPrice": "69",
+                "highPrice": "139",
+                "offerCount": "6",
+                "availability": "https://schema.org/InStock",
+                "url": "https://shineelite.ca/exterior-detailing"
+            }
         }
     </script>
 

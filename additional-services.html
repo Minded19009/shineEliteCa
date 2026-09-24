@@ -41,25 +41,98 @@
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "Additional Detailing Services",
-            "description": "Explore Shine Elite's additional detailing services — Ozone odor removal, pet hair removal, engine bay cleaning, headliner cleaning, clay bar treatment, and deep exterior clean & polish.",
+            "description": "Explore Shine Elite's additional detailing services — Ozone odor removal, pet hair removal, engine bay cleaning, headliner cleaning, iron decontamination & clay bar treatment, and deep exterior clean & polish.",
+            "url": "https://shineelite.ca/additional-services",
+            "image": "https://shineelite.ca/assets/content/img/og-image.jpg",
+            "serviceType": "Additional Auto Detailing Services",
+            "category": "Auto Detailing",
             "provider": {
-                "@type": "AutoDetailer",
+                "@type": "AutomotiveBusiness",
                 "name": "Shine Elite",
                 "url": "https://shineelite.ca/",
+                "logo": "https://shineelite.ca/assets/content/img/logo.png",
+                "image": "https://shineelite.ca/assets/content/img/og-image.jpg",
                 "telephone": "+12262423112",
+                "email": "shineelite404@gmail.com",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "170 Glidden Rd",
                     "addressLocality": "Brampton",
                     "addressRegion": "Ontario",
                     "addressCountry": "CA"
-                }
+                },
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "08:00",
+                        "closes": "18:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": "Saturday",
+                        "opens": "08:00",
+                        "closes": "15:00"
+                    }
+                ],
+                "sameAs": [
+                    "https://www.facebook.com/share/1EqZykxLGH/",
+                    "https://www.instagram.com/shine.elite",
+                    "https://www.tiktok.com/@shineelite404"
+                ]
             },
             "areaServed": {
                 "@type": "Country",
                 "name": "Canada"
             },
-            "serviceType": "Additional Detailing Services"
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Additional Detailing Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Ozone Odor Removal"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Iron Decontamination & Clay Bar Treatment"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Pet Hair Removal"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Headliner Cleaning"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Deep Exterior Clean & Polish"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Engine Bay Cleaning"
+                        }
+                    }
+                ]
+            }
         }
     </script>
 
