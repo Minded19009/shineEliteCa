@@ -42,33 +42,57 @@
             "@type": "Service",
             "name": "Interior Detailing Service",
             "description": "Shine Elite offers premium interior auto detailing across Canada. Eco-friendly steam cleaning removes dirt, stains, and grime — restoring your car's interior to pristine condition.",
+            "url": "https://shineelite.ca/interior-detailing",
+            "image": "https://shineelite.ca/assets/content/img/og-image.jpg",
+            "serviceType": "Interior Detailing",
+            "category": "Auto Detailing",
             "provider": {
-                "@type": "AutoDetailer",
+                "@type": "AutomotiveBusiness",
                 "name": "Shine Elite",
                 "url": "https://shineelite.ca/",
+                "logo": "https://shineelite.ca/assets/content/img/logo.png",
+                "image": "https://shineelite.ca/assets/content/img/og-image.jpg",
                 "telephone": "+12262423112",
+                "email": "shineelite404@gmail.com",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "170 Glidden Rd",
                     "addressLocality": "Brampton",
                     "addressRegion": "Ontario",
                     "addressCountry": "CA"
-                }
+                },
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "08:00",
+                        "closes": "18:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": "Saturday",
+                        "opens": "08:00",
+                        "closes": "15:00"
+                    }
+                ],
+                "sameAs": [
+                    "https://www.facebook.com/share/1EqZykxLGH/",
+                    "https://www.instagram.com/shine.elite",
+                    "https://www.tiktok.com/@shineelite404"
+                ]
             },
             "areaServed": {
                 "@type": "Country",
                 "name": "Canada"
             },
-            "serviceType": "Interior Detailing",
             "offers": {
-                "@type": "Offer",
+                "@type": "AggregateOffer",
                 "priceCurrency": "CAD",
-                "price": "165",
-                "priceSpecification": {
-                    "@type": "PriceSpecification",
-                    "minPrice": "165",
-                    "maxPrice": "300"
-                }
+                "lowPrice": "129",
+                "highPrice": "179",
+                "offerCount": "6",
+                "availability": "https://schema.org/InStock",
+                "url": "https://shineelite.ca/interior-detailing"
             }
         }
     </script>
